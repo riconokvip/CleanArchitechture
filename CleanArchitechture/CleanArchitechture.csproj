@@ -20,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CleanArchitechture.Application\CleanArchitechture.Application.csproj" />
     <ProjectReference Include="..\CleanArchitechture.Domain\CleanArchitechture.Domain.csproj" />
+    <ProjectReference Include="..\Cores\Cores\Cores.csproj" />
   </ItemGroup>
 
 </Project>

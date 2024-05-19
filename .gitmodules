@@ -1,0 +1,6 @@
+[submodule "Cores"]
+	path = Cores
+	url = https://github.com/riconokvip/Cores.git
+[submodule "ValidationExtensions"]
+	path = ValidationExtensions
+	url = https://github.com/riconokvip/ValidationExtensions.git
