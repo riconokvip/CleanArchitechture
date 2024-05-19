@@ -1,4 +1,4 @@
-﻿namespace CleanArchitechture.Application.DbContexts.SQLServers
+﻿namespace CleanArchitechture.Application.DbContexts
 {
     public class ApplicationDbContext : DbContext
     {
@@ -12,12 +12,12 @@
             base.OnModelCreating(builder);
 
             // Build entities
-            builder.Entity<UserEntities>().HasIndex(u => u.Id);
-            builder.Entity<PermissionEntities>().HasIndex(u => u.Id);
-            builder.Entity<UserTokenEntities>().HasIndex(u => u.Id);
-            builder.Entity<UserPermissionEntities>().HasIndex(u => u.Id);
+            builder.Entity<UserEntities>().HasIndex(u => u.Id).IsUnique();
+            builder.Entity<PermissionEntities>().HasIndex(u => u.Id).IsUnique();
+            builder.Entity<UserTokenEntities>().HasIndex(u => u.Id).IsUnique();
+            builder.Entity<UserPermissionEntities>().HasIndex(u => u.Id).IsUnique();
 
-            builder.Entity<FileEntities>().HasIndex(u => u.Id);
+            builder.Entity<FileEntities>().HasIndex(u => u.Id).IsUnique();
         }
 
         public virtual DbSet<UserEntities> Users { get; set; }

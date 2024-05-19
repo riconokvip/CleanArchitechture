@@ -10,7 +10,7 @@
 
     public class BaseAudit
     {
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         public string CreatedBy { get; set; }
 

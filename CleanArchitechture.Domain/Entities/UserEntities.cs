@@ -47,9 +47,9 @@
         public string Bio { get; set; }
 
         /// <summary>
-        /// Ngày bắt đầu làm việc
+        /// Ngày bắt đầu tham gia
         /// </summary>
-        public DateTime? StartDate { get; set; }
+        public DateTime StartDate { get; set; } = DateTime.UtcNow.Date;
 
         /// <summary>
         /// Ngày sinh

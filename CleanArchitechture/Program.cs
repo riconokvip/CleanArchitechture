@@ -31,6 +31,14 @@ AddServices(builder);
 /* -- application setting -- */
 var app = builder.Build();
 
+// Migration database
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    new DbInitializer(db).Seed();
+    db.Database.Migrate();
+}
+
 // Config HTTP
 app.UseSwagger().UseSwaggerUI(options =>
 {

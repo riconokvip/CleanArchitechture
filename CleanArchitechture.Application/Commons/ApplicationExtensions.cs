@@ -45,7 +45,7 @@
         /// </summary>
         /// <param name="time"></param>
         /// <returns></returns>
-        public static string GenerateUserId(this DateTime time)
+        public static string GenerateUserId(this DateTime time, string prefix)
         {
             string charSet = $"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz0123456789";
             int charSetLength = charSet.Length;
@@ -68,7 +68,7 @@
             int hourIndex = time.Hour % charSetLength;
             char firstChar = charSet[hourIndex];
 
-            return $"u-{GenarateRandomString(2)}{yChar}{MChar}{dChar}{firstChar}{secondChar}{thirdChar}";
+            return $"{prefix}-{GenarateRandomString(2)}{yChar}{MChar}{dChar}{firstChar}{secondChar}{thirdChar}";
         }
 
         public static string GenarateRandomString(int maxSize = 12)
